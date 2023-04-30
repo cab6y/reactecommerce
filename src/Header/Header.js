@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import './Header.css';
 import login from "../Login/Login";
 import {useState} from 'react';
-
-
+import { MAIN_URL } from '../mainUrl';
 function Header() {
   var isActiveLogin = false;
   var isActiveLogOut = false;
+  if(window.sessionStorage.getItem("sessionUserName") == null)
+  {
+    window.sessionStorage.setItem("sessionUserName", "");
+  }
   if(window.sessionStorage.getItem("sessionUserName") != '')
   {
     isActiveLogin = true;
@@ -35,7 +38,7 @@ function Header() {
       redirect: 'follow'
       };
  
- fetch("https://localhost:7178/user?userName="+window.sessionStorage.getItem("sessionUserName")+"&password=test", requestOptions)
+ fetch(MAIN_URL+"/user?userName="+window.sessionStorage.getItem("sessionUserName")+"&password=test", requestOptions)
    .then(response => response.text())
    .then(result => console.log(result))
    .catch(error => console.log('error', error));
