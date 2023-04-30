@@ -1,9 +1,7 @@
 import React, { Component , useState, useEffect , useRef} from 'react'
 import './Login.css';
 
-function postLogin(){
-  
-}
+
 const Login = () => {
   const userName = useRef(null);
   const Password = useRef(null);

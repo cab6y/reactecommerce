@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Header from './Header/Header';
 import Login from './Login/Login';
+import Register from './Register/Register';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "Login",
     element: <Login/>,
+  },
+  {
+    path: "Register",
+    element: <Register/>,
   },
 ]);
 
