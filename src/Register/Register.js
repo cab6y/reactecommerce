@@ -1,5 +1,8 @@
 import React, { Component,useRef } from 'react'
+import SweetAlert from 'react-swal' 
 import "./Register.css"
+import swal from 'sweetalert';
+
 const Register = () => {
     const name = useRef(null);
     const surname = useRef(null);
@@ -7,6 +10,7 @@ const Register = () => {
     const Password = useRef(null);
 
     function registerHttp(){
+     
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -19,7 +23,14 @@ const Register = () => {
         };
         fetch('https://localhost:7178/user', requestOptions)
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => {
+              if(data == true){
+                swal("Succes!", "Success , You Are Redirected To The Login Page!", "success")
+                .then(() => {
+                  window.location.href = "/Login"
+                });
+              }
+            });
     }
 
     return (

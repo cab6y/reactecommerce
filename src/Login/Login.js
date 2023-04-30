@@ -1,15 +1,24 @@
 import React, { Component , useState, useEffect , useRef} from 'react'
 import './Login.css';
-
+import swal from 'sweetalert';
+import Header from '../Header/Header';
+import {MAIN_URL} from '../mainUrl'
 
 const Login = () => {
   const userName = useRef(null);
   const Password = useRef(null);
   function handleClick() {
-    fetch('https://localhost:7178/user?userName='+userName.current.value+'&password='+Password.current.value)
+    fetch(MAIN_URL+'/user?userName='+userName.current.value+'&password='+Password.current.value)
   .then(response => response.json())
   .then(data => {
-    // Do something with the data
+    if(data == false){
+      swal("ERROR!", "WRONG USERNAME OR PASSWORD!", "error");
+    }
+    else{
+      
+      window.sessionStorage.setItem("sessionUserName", userName.current.value);
+      window.location.href= "/";
+    }
   })
   .catch(error => {
     // Handle the error
