@@ -50,6 +50,12 @@ function Header() {
     <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand logo" href='/'>Cihan Abay</a>
+    
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link Active" style={{display: isActiveLogOut ? 'none' : '',}} aria-current="page" href="Products">Products</a>
+        </li>
+        </ul>
     <form class="d-flex">
       <a class="btn btn-outline-success" style={{display: isActiveLogin ? 'none' : '',}} id='login'  href="/Login" type="submit">Login</a>
       <a class="btn btn-outline-success" id="register" style={{display: isActiveLogin ? 'none' : '',}} href="/Register" type="submit">Register</a>
