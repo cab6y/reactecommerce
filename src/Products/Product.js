@@ -1,6 +1,9 @@
 import React, { Component,useEffect, useState   } from 'react'
 import DataTable from 'react-data-table-component';
 import { MAIN_URL } from '../mainUrl';
+function redirects(id) {
+  window.location.href="/ProductsEdit/"+id;
+}
 const columns = [
   {
     
@@ -10,8 +13,8 @@ const columns = [
         Action
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#" id={row.id}>Edit</a></li>
-        <li><a class="dropdown-item" href="#" id={row.id}>Delete</a></li>
+      <li><a class="dropdown-item" href="#" onClick={() => redirects(row.id)}id={row.id}>Edit</a></li>
+      <li><a class="dropdown-item" href="#" id={row.id}>Delete</a></li>
       </ul>
     </div>,
     ignoreRowClick: true,

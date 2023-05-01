@@ -53,7 +53,7 @@ function Header() {
     
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link Active" style={{display: isActiveLogOut ? 'none' : '',}} aria-current="page" href="Products">Products</a>
+          <a class="nav-link Active" style={{display: isActiveLogOut ? 'none' : '',}} aria-current="page" href="/Products">Products</a>
         </li>
         </ul>
     <form class="d-flex">
