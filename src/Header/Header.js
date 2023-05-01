@@ -49,15 +49,20 @@ function Header() {
   return (
     <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href='/'>Cihan Abay</a>
+    <a class="navbar-brand logo" href='/'>Cihan Abay</a>
     <form class="d-flex">
       <a class="btn btn-outline-success" style={{display: isActiveLogin ? 'none' : '',}} id='login'  href="/Login" type="submit">Login</a>
-      <label class="btn btn-outline-success" id='sessionUser'  style={{display: isActiveLogOut ? 'none' : '',}}   type="submit">{window.sessionStorage.getItem("sessionUserName")}</label>
       <a class="btn btn-outline-success" id="register" style={{display: isActiveLogin ? 'none' : '',}} href="/Register" type="submit">Register</a>
       
-      <button class="btn btn-outline-success" onClick={logout} style={{display: isActiveLogOut ? 'none' : '',}}>
-      LogOut
-    </button>
+    <div class="dropdown drpDown">
+  <button class="btn btn-secondary dropdown-toggle" style={{display: isActiveLogOut ? 'none' : '',}} type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  {window.sessionStorage.getItem("sessionUserName")}
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Basket</a></li>
+    <li><button class="dropdown-item" onClick={logout}>LogOut</button></li>
+  </ul>
+</div>
     </form>
   </div>
 </nav>
