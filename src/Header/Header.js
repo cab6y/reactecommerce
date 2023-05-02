@@ -47,16 +47,26 @@ function Header() {
    
   }
   return (
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand logo" href='/'>Cihan Abay</a>
-    
+    <a class="navbar-brand" href="#">Cihan Abay</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link Active" style={{display: isActiveLogOut ? 'none' : '',}} aria-current="page" href="/Products">Products</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        </ul>
-    <form class="d-flex">
+        <li class="nav-item">
+        <a class="nav-link Active" style={{display: isActiveLogOut ? 'none' : '',}} aria-current="page" href="/Products">Products</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link Active" style={{display: isActiveLogOut ? 'none' : '',}} aria-current="page" href="/CustomerTrades">Trades</a>
+        </li>
+      
+      </ul>
+      <form class="d-flex">
       <a class="btn btn-outline-success" style={{display: isActiveLogin ? 'none' : '',}} id='login'  href="/Login" type="submit">Login</a>
       <a class="btn btn-outline-success" id="register" style={{display: isActiveLogin ? 'none' : '',}} href="/Register" type="submit">Register</a>
       
@@ -70,6 +80,7 @@ function Header() {
   </ul>
 </div>
     </form>
+    </div>
   </div>
 </nav>
   );
