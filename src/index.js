@@ -8,6 +8,7 @@ import Register from './Register/Register';
 import reportWebVitals from './reportWebVitals';
 import Product from './Products/Product';
 import ProductEdit from './Products/ProductEdit/ProductEdit';
+import ProductCreate from './Products/ProductCreate/ProductCreate';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "ProductsEdit/:id",
     element: <ProductEdit/>,
+  },
+  {
+    path: "ProductCreate",
+    element: <ProductCreate/>,
   },
 ]);
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { useState, useEffect, useRef } from 'react';
+import { MAIN_URL } from '../../mainUrl';
 import {
     BrowserRouter as Router,
     Link,
@@ -48,10 +49,10 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://localhost:7178/Product", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+fetch(MAIN_URL+"/Product", requestOptions)
+.then(response => response.text())
+.then(result => window.location.href="/Products")
+.catch(error => console.log('error', error));
       }
     return (
         <section class="vh-100">
@@ -104,7 +105,7 @@ fetch("https://localhost:7178/Product", requestOptions)
                             </div>
         
                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                              <button type="submit" onClick={() => handleClick()}  class="btn btn-primary btn-lg">Save</button>
+                              <button type="button" onClick={() => handleClick()}  class="btn btn-primary btn-lg">Save</button>
                             </div>
         
                           </form>

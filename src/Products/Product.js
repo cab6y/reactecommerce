@@ -4,6 +4,20 @@ import { MAIN_URL } from '../mainUrl';
 function redirects(id) {
   window.location.href="/ProductsEdit/"+id;
 }
+function Delete(id){
+  var raw = "";
+
+var requestOptions = {
+  method: 'DELETE',
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://localhost:7178/Product?id="+id, requestOptions)
+  .then(response => response.text())
+  .then(result => window.location.href="/Products")
+  .catch(error => console.log('error', error));
+}
 const columns = [
   {
     
@@ -13,8 +27,8 @@ const columns = [
         Action
       </button>
       <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#" onClick={() => redirects(row.id)}id={row.id}>Edit</a></li>
-      <li><a class="dropdown-item" href="#" id={row.id}>Delete</a></li>
+      <li><a class="dropdown-item" href="#" onClick={() => redirects(row.id)} id={row.id}>Edit</a></li>
+      <li><a class="dropdown-item" href="#" onClick={() => Delete(row.id)} id={row.id}>Delete</a></li>
       </ul>
     </div>,
     ignoreRowClick: true,
@@ -67,10 +81,16 @@ function Product() {
 
  
     return (
-      <DataTable
+      <div class="form-group">
+<a type="button" href="/ProductCreate">New Product</a>
+<DataTable
       columns={columns}
       data={data}
   />
+      </div>
+      
+     
+  
     
     )
 }
