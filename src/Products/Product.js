@@ -1,6 +1,7 @@
 import React, { Component,useEffect, useState   } from 'react'
 import DataTable from 'react-data-table-component';
 import { MAIN_URL } from '../mainUrl';
+import "./Product.css"
 function redirects(id) {
   window.location.href="/ProductsEdit/"+id;
 }
@@ -82,7 +83,12 @@ function Product() {
  
     return (
       <div class="form-group">
-<a type="button" href="/ProductCreate">New Product</a>
+        <br/>
+        <div class="row">
+          <div class="col-10"></div>
+          <div class="col-2"><a class="btn btn-primary newProduct" href="/ProductCreate">New Product</a></div>
+        </div>
+
 <DataTable
       columns={columns}
       data={data}

@@ -10,6 +10,7 @@ import Product from './Products/Product';
 import ProductEdit from './Products/ProductEdit/ProductEdit';
 import ProductCreate from './Products/ProductCreate/ProductCreate';
 import CustomerTrades from './CustomerTrades/CustomerTrades';
+import ProductDetail from './Products/ProductDetails/ProductDetail';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "CustomerTrades",
     element: <CustomerTrades/>,
+  },
+  {
+    path: "ProductDetail/:id",
+    element: <ProductDetail/>,
   },
 ]);
 
