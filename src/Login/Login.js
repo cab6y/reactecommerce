@@ -17,6 +17,7 @@ const Login = () => {
     else{
       
       window.sessionStorage.setItem("sessionUserName", userName.current.value);
+      window.sessionStorage.setItem("sessionUserId", data);
       window.location.href= "/";
     }
   })

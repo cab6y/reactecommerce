@@ -12,7 +12,7 @@ import "./CustomerTrades.css"
 function CustomerTrades() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        fetch('https://localhost:7178/product/GetList')
+        fetch(MAIN_URL+'/product/GetList')
            .then((res) => res.json())
            .then((data) => {
               console.log(data);
@@ -22,6 +22,9 @@ function CustomerTrades() {
               console.log(err.message);
            });
      }, []);
+     function redirect(id) {
+        window.location.href="/ProductDetail/"+id;
+      }
 
     return (
         <section class="section-products" >
@@ -36,12 +39,12 @@ function CustomerTrades() {
             {posts.map((product, index) => (  
                 <div class="col-md-6 col-lg-4 col-xl-3">
                         <a href="#">
-                            <div id="product-{{i+1}}" class="single-product" >
-                                <img src={product.imageUrl} class="single-image"
+                            <div id="product-{{i+1}}" class="single-product" onClick={() => redirect(product.id)} >
+                                <img src={product.imageUrl} class="single-image" 
                             />
                                     <div class="part-1">    
                                             <ul>
-                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    <li><a onClick={() => redirect(product.id)}><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                     </div>
                                     <div class="part-2">
