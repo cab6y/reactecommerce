@@ -12,11 +12,14 @@ import ProductCreate from './Products/ProductCreate/ProductCreate';
 import CustomerTrades from './CustomerTrades/CustomerTrades';
 import ProductDetail from './Products/ProductDetails/ProductDetail';
 import Basket from './Basket/Basket';
+import Address from './Address/Address';
+import CreateAddress from './Address/CreateAddress/CreateAddress';
+import EditAddress from './Address/EditAddress/EditAddress';
+import Order from './Order/Order';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-const baseApi = "https://localhost:7178";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,6 +56,26 @@ const router = createBrowserRouter([
   {
     path: "Basket",
     element: <Basket/>,
+  },
+  {
+    path: "Basket",
+    element: <Basket/>,
+  },
+  {
+    path: "Address",
+    element: <Address/>,
+  },
+  {
+    path: "CreateAddress",
+    element: <CreateAddress/>,
+  },
+  {
+    path: "EditAddress/:id",
+    element: <EditAddress/>,
+  },
+  {
+    path: "Order",
+    element: <Order/>,
   },
 ]);
 

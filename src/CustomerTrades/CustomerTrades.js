@@ -17,6 +17,7 @@ function CustomerTrades() {
            .then((data) => {
               console.log(data);
               setPosts(data);
+              console.log(posts);
            })
            .catch((err) => {
               console.log(err.message);
@@ -42,6 +43,7 @@ function CustomerTrades() {
                             <div id="product-{{i+1}}" class="single-product" onClick={() => redirect(product.id)} >
                                 <img src={product.imageUrl} class="single-image" 
                             />
+                            
                                     <div class="part-1">    
                                             <ul>
                                                     <li><a onClick={() => redirect(product.id)}><i class="fa fa-shopping-cart"></i></a></li>

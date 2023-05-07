@@ -14,7 +14,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://localhost:7178/Product?id="+id, requestOptions)
+fetch(MAIN_URL+"/Product?id="+id, requestOptions)
   .then(response => response.text())
   .then(result => window.location.href="/Products")
   .catch(error => console.log('error', error));
@@ -65,7 +65,7 @@ const columns = [
 function Product() {
   const [data, setData] = useState([]);
   const fetchData = () => {
-    fetch(`https://localhost:7178/product/GetList`)
+    fetch(MAIN_URL+`/product/GetList`)
       .then((response) => response.json())
       .then((actualData) => {
         console.log(actualData);

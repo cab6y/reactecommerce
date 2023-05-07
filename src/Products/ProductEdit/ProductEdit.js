@@ -19,7 +19,7 @@ import {
     const imageUrl = useRef(null);
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        fetch('https://localhost:7178/Product?id='+id)
+        fetch(MAIN_URL+'/Product?id='+id)
            .then((res) => res.json())
            .then((data) => {
               console.log(data);

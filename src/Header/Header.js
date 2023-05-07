@@ -76,6 +76,7 @@ function Header() {
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="/Basket">Basket</a></li>
+    <li><a class="dropdown-item" href="/Order">Order</a></li>
     <li><button class="dropdown-item" onClick={logout}>LogOut</button></li>
   </ul>
 </div>

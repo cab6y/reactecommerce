@@ -2,6 +2,7 @@ import React, { Component,useRef } from 'react'
 import SweetAlert from 'react-swal' 
 import "./Register.css"
 import swal from 'sweetalert';
+import { MAIN_URL } from '../mainUrl';
 
 const Register = () => {
     const name = useRef(null);
@@ -21,7 +22,7 @@ const Register = () => {
                 "password": Password.current.value
               })
         };
-        fetch('https://localhost:7178/user', requestOptions)
+        fetch(MAIN_URL+'/user', requestOptions)
             .then(response => response.json())
             .then(data => {
               if(data == true){
